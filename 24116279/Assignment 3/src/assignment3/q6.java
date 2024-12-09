@@ -7,14 +7,17 @@ public class q6 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter Units Consumed: ");
 		int unit = sc.nextInt();
-		if (unit < 50)
-			System.out.println("BILL = " + (unit*3));
-		else if (unit >= 50 && unit < 200)
-			System.out.println("BILL = " + (unit*4.80));
-		else if (unit >= 200 && unit < 400)
-			System.out.println("BILL = " + (unit*5.80));
+		double bill = 0;
+		if (unit <= 50)
+			bill = unit*3;
+		else if (unit > 50 && unit <= 200)
+			bill = 50*3 + (unit-50)*4.80;
+		else if (unit > 200 && unit <= 400)
+			bill = 50*3 + 150*4.80 + (unit-200)*5.80;
 		else
-			System.out.println("BILL = " + (unit*6.20));
+			bill = 50*3 + 150*4.80+ 200*5.80 + (unit-400)*6.20;
+		System.out.println("Total Amount = " + bill);
+		
 	}
 
 }
